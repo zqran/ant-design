@@ -62,7 +62,7 @@ const columns = [
 | --- | --- | --- | --- | --- |
 | bordered | Whether to show all table borders | boolean | false |  |
 | columns | Columns of table | [ColumnsType](#Column)\[] | - |  |
-| components | Override default table elements | [TableComponents](https://github.com/ant-design/ant-design/blob/306bce385bca4487ad5c2aec9b55c31511f6f810/components/table/interface.tsx#L39) | - |  |
+| components | Override default table elements | [TableComponents](https://github.com/react-component/table/blob/75ee0064e54a4b3215694505870c9d6c817e9e4a/src/interface.ts#L129) | - |  |
 | dataSource | Data record array to be displayed | object\[] | - |  |
 | expandable | Config expandable content | [expandable](#expandable) | - |  |
 | footer | Table footer renderer | function(currentPageData) | - |  |
@@ -92,20 +92,16 @@ Same as `onRow` `onHeaderRow` `onCell` `onHeaderCell`
 
 ```jsx
 <Table
-  onRow={(record, rowIndex) => {
-    return {
+  onRow={(record, rowIndex) => ({
       onClick: event => {}, // click row
       onDoubleClick: event => {}, // double click row
       onContextMenu: event => {}, // right button click row
       onMouseEnter: event => {}, // mouse enter row
       onMouseLeave: event => {}, // mouse leave row
-    };
-  }}
-  onHeaderRow={(columns, index) => {
-    return {
+    })}
+  onHeaderRow={(columns, index) => ({
       onClick: () => {}, // click header row
-    };
-  }}
+    })}
 />
 ```
 

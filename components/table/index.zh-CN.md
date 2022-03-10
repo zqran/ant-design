@@ -69,7 +69,7 @@ const columns = [
 | --- | --- | --- | --- | --- |
 | bordered | 是否展示外边框和列边框 | boolean | false |  |
 | columns | 表格列的配置描述，具体项见下表 | [ColumnsType](#Column)\[] | - |  |
-| components | 覆盖默认的 table 元素 | [TableComponents](https://github.com/ant-design/ant-design/blob/306bce385bca4487ad5c2aec9b55c31511f6f810/components/table/interface.tsx#L39) | - |  |
+| components | 覆盖默认的 table 元素 | [TableComponents](https://github.com/react-component/table/blob/75ee0064e54a4b3215694505870c9d6c817e9e4a/src/interface.ts#L129) | - |  |
 | dataSource | 数据数组 | object\[] | - |  |
 | expandable | 配置展开属性 | [expandable](#expandable) | - |  |
 | footer | 表格尾部 | function(currentPageData) | - |  |
@@ -99,20 +99,16 @@ const columns = [
 
 ```jsx
 <Table
-  onRow={record => {
-    return {
+  onRow={record => ({
       onClick: event => {}, // 点击行
       onDoubleClick: event => {},
       onContextMenu: event => {},
       onMouseEnter: event => {}, // 鼠标移入行
       onMouseLeave: event => {},
-    };
-  }}
-  onHeaderRow={(columns, index) => {
-    return {
+    })}
+  onHeaderRow={(columns, index) => ({
       onClick: () => {}, // 点击表头行
-    };
-  }}
+    })}
 />
 ```
 
